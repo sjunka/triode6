@@ -42,14 +42,9 @@
 <script>
   export default {
 
-    data () {
-      return {
-        meetups: [
-          { imageUrl: 'https://68.media.tumblr.com/6139bd02162efb5aa21c203c996764ee/tumblr_ovh3i4UtEc1w6292to1_400.jpg', id: 'myid', title: '' },
-          { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Villa_de_leyva.jpg', id: 'myid', title: 'Villa de Leyva' },
-          { imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Rompiendo_el_edicto_-_Manuela_Beltr%C3%A1n.JPG', id: 'myid', title: 'Socorro' },
-          { imageUrl: 'https://c1.staticflickr.com/6/5138/5426314914_cbe74ccab2_b.jpg', id: 'myid', title: 'San Gil' }
-        ]
+    computed: {
+      meetups () {
+        return this.$store.getters.featuredMeetups
       }
     },
 
@@ -58,6 +53,7 @@
         this.$router.push('/meetups/' + id)
       }
     }
+
   }
 </script>
 
