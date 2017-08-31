@@ -9,8 +9,8 @@ export const store = new Vuex.Store({
       {
         imageUrl: 'https://68.media.tumblr.com/6139bd02162efb5aa21c203c996764ee/tumblr_ovh3i4UtEc1w6292to1_400.jpg',
         id: '1',
-        title: 'Bienvenidos',
-        description: 'Lorem ipsum dolor sit amet, consc, porta vulputate nisl. Proin et auctor justo. Nulla bibendum quam dolor. Donec non eros sed augue ullamcorper tempor fer',
+        title: 'TrioD6',
+        description: 'Trio de Seis es una agrupación de artistas que tienen entre sí una mayor vinculación que un movimiento artístico, aunque sí es habitual que pertenezcan al mismo movimiento; por ejemplo los neoplasticistas holandeses De Stijl (1917)',
         date: '2017-05-30'
       },
       {

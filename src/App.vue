@@ -1,12 +1,24 @@
 <template>
   <v-app>
+    <!--Menu lateral-->
+    <!--Menu lateral-->
+    <!--Menu lateral-->
 
-      <v-navigation-drawer v-model="sideNav" temporary>
+    <v-navigation-drawer v-model="sideNav" temporary>
+
+          <v-list two-line>
+            <v-list-tile-avatar>
+              <img src="./assets/dados.png" alt="dados"  style=" height:120px; width: 120px "  >
+            </v-list-tile-avatar>
+
+
+          </v-list>
+
+          <v-divider></v-divider>
 
           <v-list>
               <v-list-tile v-for="item in menuItems"
                            :key="item.title"
-
                             :to="item.link">
                   <v-list-tile-action>
                       <v-icon>{{ item.icon }}</v-icon>
@@ -17,7 +29,13 @@
 
       </v-navigation-drawer>
 
-      <v-toolbar dark class="info">
+    <!--Menu lateral-->
+    <!--Menu lateral-->
+    <!--Menu lateral-->
+
+
+
+    <v-toolbar dark class="info">
 
           <div>
               <v-toolbar-side-icon
@@ -58,15 +76,15 @@
         menuItems: [
          {icon: 'person', title: 'Mi Perfil', link: '/profile'},
 
-         {icon: 'supervisor_account', title: 'Ver Meetups', link: '/meetups'},
-         {icon: 'room', title: 'Crear Meetups', link: '/meetups/new'},
+         {icon: 'supervisor_account', title: 'Ver Eventos', link: '/meetups'},
+//         {icon: 'room', title: 'Crear Meetups', link: '/meetups/new'},
 
          {icon: 'directions_run', title: 'Sobre Nosotros'},
          {icon: 'phone_iphone', title: 'Redes Sociales'},
-         {icon: 'control_point', title: 'Ubicanos'},
+         {icon: 'control_point', title: 'Ubicanos'}
 
-         {icon: 'face', title: 'Sign up', link: '/signup'},
-         {icon: 'lock_open', title: 'Sign in', link: '/signin'}
+//         {icon: 'face', title: 'Sign up', link: '/signup'},
+//         {icon: 'lock_open', title: 'Sign in', link: '/signin'}
         ]
       }
     }
