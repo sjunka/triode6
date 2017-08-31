@@ -5,31 +5,35 @@
         <v-card>
 
           <v-card-title class="pb-0" >
-            <h4 class="info--text">Trio de 6</h4>
+            <h4 class="info--text">{{ meetup.title }}</h4>
           </v-card-title>
 
           <v-card-media
-          src="https://68.media.tumblr.com/b150a0775c080572ede9b8e73a73e89a/tumblr_ovh38c8J4z1w6292to1_1280.jpg"
-          height="100px"
+          :src="meetup.imageUrl"
+          height="300px"
           >
           </v-card-media>
 
           <v-card-text>
 
             <div class="info--text ">
-              <p class="ma-0">Septiembre 30 2017</p>
-              <p class="ma-0">Bucaramanga, Santander</p>
+              <p class="ma-0">{{ meetup.date }}</p>
             </div>
 
             <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet cum eum fugit illo, iure laboriosam nihil possimus provident qui quibusdam quos sunt. Architecto, at consequatur dicta distinctio esse fugiat fugit nisi perferendis quaerat recusandae reiciendis tempora temporibus ullam, voluptate.</p>
+              <p>{{ meetup.description }}</p>
             </div>
 
           </v-card-text>
 
-          <v-card-actions>
-            <v-spacer></v-spacer>
+          <v-card-actions class="layout justify-center">
+
+            <v-btn class="info"
+                   :to="'/meetups/'"
+            >Volver</v-btn>
+
             <v-btn class="info">Asistir</v-btn>
+
           </v-card-actions>
 
         </v-card>
@@ -37,3 +41,14 @@
     </v-layout>
   </v-container>
 </template>
+
+<script>
+  export default {
+    props: ['id'],
+    computed: {
+      meetup () {
+        return this.$store.getters.loadedMeetup(this.id)
+      }
+    }
+  }
+</script>
