@@ -1,8 +1,6 @@
 <template>
     <v-container>
 
-
-
       <v-layout row wrap>
         <v-flex xs12 >
             <v-carousel style="height: 330px; cursor: pointer" dark>
@@ -31,12 +29,28 @@
         <v-flex xs12 sm6 class="text-xs-center text-sm-right">
           <v-btn large router to="/meetups" class="info">Explorar Eventos</v-btn>
         </v-flex>
-        <v-flex xs12 sm6 class="text-xs-center text-sm-left">
+        <v-flex xs12 sm6 class="text-xs-center text-sm-left pb-2">
           <v-btn large router to="/meetup/new" light disabled class="info">Agregar Evento</v-btn>
         </v-flex>
       </v-layout>
 
+      <v-layout >
+        <v-flex xs12>
+
+          <v-card class="card_style">
+            <v-card-media>
+              <video class="video_position" poster="static/v.png" autoplay="true" loop>
+                <source src="static/intro_video.mp4" type="video/mp4">
+              </video>
+            </v-card-media>
+            increibles acrobacias
+          </v-card>
+
+        </v-flex>
+      </v-layout>
+
     </v-container>
+
 </template>
 
 <script>
@@ -53,7 +67,6 @@
         this.$router.push('/meetups/' + id)
       }
     }
-
   }
 </script>
 
@@ -65,5 +78,19 @@
     color: white;
     font-size: 2em;
     padding: 15px;
+  }
+  .video_position{
+    /*position: relative;*/
+    /*top:50%;*/
+    /*left:50%;*/
+    /*transform: translate(-50%, -50%);*/
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
+  .card_style{
+    height: 300px;
+    width: 300px;
   }
 </style>
