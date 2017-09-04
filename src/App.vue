@@ -6,13 +6,18 @@
 
     <v-navigation-drawer v-model="sideNav" temporary>
 
-          <v-list two-line>
-            <v-list-tile-avatar>
-              <img src="./assets/dados.png" alt="dados"  style=" height:120px; width: 120px "  >
-            </v-list-tile-avatar>
-
-
-          </v-list>
+          <v-flex
+            xs12
+            text-xs-center
+            layout
+            align-center
+            justify-center>
+          <v-avatar
+          :tile="false"
+          size="130px">
+            <img src="./assets/dados.png" alt="dados" >
+            </v-avatar>
+          </v-flex>
 
           <v-divider></v-divider>
 
