@@ -1,5 +1,6 @@
 <template>
     <v-container>
+        <h4 class="mb-3 text-xs-center info white--text">TRIO DE SEIS</h4>
 
       <v-layout row wrap>
         <v-flex xs12 >
@@ -26,36 +27,91 @@
       </v-layout>
 
       <v-layout row wrap>
+
         <v-flex xs12 sm6 class="text-xs-center text-sm-right">
-          <v-btn large router to="/meetups" class="info">Explorar Eventos</v-btn>
+          <v-btn large router to="/meetups" class="info">Mas Eventos</v-btn>
         </v-flex>
+
         <v-flex xs12 sm6 class="text-xs-center text-sm-left pb-2">
-          <v-btn large router to="/meetup/new" light disabled class="info">Agregar Evento</v-btn>
+          <v-btn large router to="/meetup/new" light disabled class="info">Nuevo Evento</v-btn>
         </v-flex>
+
+
       </v-layout>
 
-      <v-layout >
+      <v-layout pt-2>
         <v-flex xs12>
 
-          <v-card class="card_style">
-            <v-card-media>
-              <video class="video_position" poster="static/v.png" autoplay="true" loop>
-                <source src="static/intro_video.mp4" type="video/mp4">
-              </video>
-            </v-card-media>
-            increibles acrobacias
+          <h4 class="mb-3 text-xs-center info white--text">ARTISTAS</h4>
+          <v-card class="elevation-0">
+            <v-card-title class="pt-0 pb-0">
+              <div>
+                <p class="mb-0">Los integrantes de nuestro grupo artistico nacieron de la combinacion de la panela, miel y trozos
+                   de piña encontrados en una taza de totumo.</p>
+              </div>
+            </v-card-title>
+
+            <v-card-text>
+
+              <v-expansion-panel expand>
+                <v-expansion-panel-content v-for="artista in artistas" :key="artistas.nombre">
+                  <div slot="header">{{ artista.nombre }}</div>
+                  <v-card>
+                    <v-card-text >
+                      <v-flex class="grey lighten-3"
+                        xs12
+                        text-xs-center
+                        layout
+                        align-center
+                        justify-center>
+
+                        <v-avatar
+                          size="130px">
+                          <img :src='artista.imagen' alt="dados" >
+                        </v-avatar>
+                      </v-flex>
+
+                      <v-divider></v-divider>
+                      {{ artista.descripcion }}
+                    </v-card-text>
+                  </v-card>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+
+            </v-card-text>
+
           </v-card>
+
+
+
+
+
 
         </v-flex>
       </v-layout>
 
     </v-container>
-
 </template>
 
 <script>
   export default {
+    data () {
+      return {
+        artistas: [
+          { nombre: 'EDWIN SARELY OSORIO',
+            imagen: '/static/v.png',
+            descripcion: 'Ademas de ser el Director de la agrupacion, maquilla y malabarea al son de tu cancion.'},
 
+          { nombre: 'DIANA CARRASCAL',
+            imagen: '/static/v.png',
+            descripcion: 'Instructora de Danza Aerea, sus alas vuelan de arriba a abajo enrredando tus sentidos en sus torbellinos-'},
+
+          { nombre: 'JULIAN NAVARRO',
+            imagen: '/static/v.png',
+            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, voluptates? '}
+        ]
+      }
+    },
     computed: {
       meetups () {
         return this.$store.getters.featuredMeetups
@@ -79,18 +135,4 @@
     font-size: 2em;
     padding: 15px;
   }
-  .video_position{
-    /*position: relative;*/
-    /*top:50%;*/
-    /*left:50%;*/
-    /*transform: translate(-50%, -50%);*/
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-  }
-  .card_style{
-    height: 300px;
-    width: 300px;
-  }
-</style>
+ </style>

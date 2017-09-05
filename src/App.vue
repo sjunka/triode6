@@ -24,7 +24,7 @@
           <v-list>
               <v-list-tile v-for="item in menuItems"
                            :key="item.title"
-                            :to="item.link">
+                           :to="item.link">
                   <v-list-tile-action>
                       <v-icon>{{ item.icon }}</v-icon>
                   </v-list-tile-action>
