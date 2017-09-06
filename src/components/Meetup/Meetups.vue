@@ -1,5 +1,8 @@
 <template>
   <v-container>
+
+    <h4 class="mb-3 text-xs-center info white--text">EVENTOS</h4>
+
     <v-layout row wrap v-for="meetup in meetups" :key="meetup.id" class="mb-2">
       <v-flex xs12 sm10 md8 offset-sm1 offset-md2>
 

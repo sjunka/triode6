@@ -8,11 +8,7 @@
               <v-carousel-item  v-for="meetup in meetups"
                                v-bind:src="meetup.imageUrl"
                                :key="meetup.id"
-                                @click="onLoadMeetup(meetup.id)">
-
-                <div class="title">
-                  {{ meetup.title }}
-                </div>
+                               >
 
               </v-carousel-item>
 
@@ -53,12 +49,12 @@
 
             <v-card-text>
 
-              <v-expansion-panel expand>
+              <v-expansion-panel focusable>
                 <v-expansion-panel-content v-for="artista in artistas" :key="artistas.nombre">
                   <div slot="header">{{ artista.nombre }}</div>
                   <v-card>
                     <v-card-text >
-                      <v-flex class="grey lighten-3"
+                      <v-flex class="blue darken-1"
                         xs12
                         text-xs-center
                         layout
@@ -66,6 +62,7 @@
                         justify-center>
 
                         <v-avatar
+                          class="mb-1 mt-1"
                           size="130px">
                           <img :src='artista.imagen' alt="dados" >
                         </v-avatar>
@@ -99,16 +96,20 @@
       return {
         artistas: [
           { nombre: 'EDWIN SARELY OSORIO',
-            imagen: '/static/v.png',
+            imagen: '/static/imagen_artista_sarely.jpg',
             descripcion: 'Ademas de ser el Director de la agrupacion, maquilla y malabarea al son de tu cancion.'},
 
           { nombre: 'DIANA CARRASCAL',
-            imagen: '/static/v.png',
-            descripcion: 'Instructora de Danza Aerea, sus alas vuelan de arriba a abajo enrredando tus sentidos en sus torbellinos-'},
+            imagen: '/static/imagen_artista_diana.jpg',
+            descripcion: 'Instructora de Danza Aerea, sus alas vuelan de arriba a abajo enrredando tus sentidos en sus torbellinos.'},
+
+          { nombre: 'JORGE CARNAVAL',
+            imagen: '/static/imagen_artista_jorge_carnaval.jpg',
+            descripcion: 'Con sus malabares y llamas, dara calor a goce '},
 
           { nombre: 'JULIAN NAVARRO',
-            imagen: '/static/v.png',
-            descripcion: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, voluptates? '}
+            imagen: '/static/imagen_artista_julian.jpg',
+            descripcion: 'Director audiovisual, captura los momentos con su ojo, conocido como el ninja que copia. Y tambien hace malabares!'}
         ]
       }
     },
@@ -119,9 +120,6 @@
     },
 
     methods: {
-      onLoadMeetup (id) {
-        this.$router.push('/meetups/' + id)
-      }
     }
   }
 </script>

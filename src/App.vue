@@ -12,11 +12,11 @@
             layout
             align-center
             justify-center>
-          <v-avatar
-          :tile="false"
-          size="130px">
-            <img src="./assets/dados.png" alt="dados" >
-            </v-avatar>
+          <!--<v-avatar-->
+          <!--:tile="true"-->
+          <!--size="180px">-->
+            <img style="height: 150px; width: 300px" src="/static/imagen_logo_drawer.png" alt="dados" >
+            <!--</v-avatar>-->
           </v-flex>
 
           <v-divider></v-divider>
@@ -79,7 +79,8 @@
       return {
         sideNav: false,
         menuItems: [
-         {icon: 'person', title: 'Mi Perfil', link: '/profile'},
+         {icon: 'person', title: 'Home', link: '/'},
+//         {icon: 'person', title: 'Mi Perfil', link: '/profile'},
 
          {icon: 'supervisor_account', title: 'Ver Eventos', link: '/meetups'},
 //         {icon: 'room', title: 'Crear Meetups', link: '/meetups/new'},
